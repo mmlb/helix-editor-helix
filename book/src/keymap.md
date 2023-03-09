@@ -173,10 +173,9 @@ These modes (except command mode) can be configured by
 
 Accessed by typing `z` in [normal mode](#normal-mode).
 
-View mode is intended for scrolling and manipulating the view without changing
-the selection. The "sticky" variant of this mode (accessed by typing `Z` in
-normal mode) is persistent and can be exited using the escape key. This is
-useful when you're simply looking over text and not actively editing it.
+View mode is intended for scrolling and manipulating the view without changing the selection.
+The "sticky" variant of this mode (accessed by typing `Z` in normal mode) is persistent and can be exited using the escape key.
+This is useful when you're simply looking over text and not actively editing it.
 
 
 | Key                  | Description                                               | Command             |
@@ -223,8 +222,7 @@ Jumps to various locations.
 
 Accessed by typing `m` in [normal mode](#normal-mode).
 
-See the relevant section in [Usage](./usage.md) for an explanation about
-[surround](./usage.md#surround) and [textobject](./usage.md#navigating-using-tree-sitter-textobjects) usage.
+See the relevant section in [Usage](./usage.md) for an explanation about [surround](./usage.md#surround) and [textobject](./usage.md#navigating-using-tree-sitter-textobjects) usage.
 
 | Key              | Description                                     | Command                    |
 | -----            | -----------                                     | -------                    |
@@ -334,10 +332,9 @@ These mappings are in the style of [vim-unimpaired](https://github.com/tpope/vim
 
 ## Insert mode
 
-Insert mode bindings are minimal by default. Helix is designed to
-be a modal editor, and this is reflected in the user experience and internal
-mechanics. Changes to the text are only saved for undos when
-escaping from insert mode to normal mode.
+Insert mode bindings are minimal by default.
+Helix is designed to be a modal editor, and this is reflected in the user experience and internal mechanics.
+Changes to the text are only saved for undos when escaping from insert mode to normal mode.
 
 > 💡 New users are strongly encouraged to learn the modal editing paradigm
 > to get the smoothest experience.
@@ -356,8 +353,7 @@ escaping from insert mode to normal mode.
 | `Ctrl-d`, `Delete`                          | Delete next char            | `delete_char_forward`    |
 | `Ctrl-j`, `Enter`                           | Insert new line             | `insert_newline`         |
 
-These keys are not recommended, but are included for new users less familiar
-with modal editors.
+These keys are not recommended, but are included for new users less familiar with modal editors.
 
 | Key                                         | Description                 | Command                  |
 | -----                                       | -----------                 | -------                  |
@@ -370,8 +366,8 @@ with modal editors.
 | `Home`                                      | Move to line start          | `goto_line_start`        |
 | `End`                                       | Move to line end            | `goto_line_end_newline`  |
 
-As you become more comfortable with modal editing, you may want to disable some
-insert mode bindings. You can do this by editing your `config.toml` file.
+As you become more comfortable with modal editing, you may want to disable some insert mode bindings.
+You can do this by editing your `config.toml` file.
 
 ```toml
 [keys.insert]
@@ -387,20 +383,18 @@ end = "no_op"
 
 ## Select / extend mode
 
-Select mode echoes Normal mode, but changes any movements to extend
-selections rather than replace them. Goto motions are also changed to
-extend, so that `vgl` for example extends the selection to the end of
-the line.
+Select mode echoes Normal mode, but changes any movements to extend selections rather than replace them.
+Goto motions are also changed to extend, so that `vgl` for example extends the selection to the end of the line.
 
-Search is also affected. By default, `n` and `N` will remove the current
-selection and select the next instance of the search term. Toggling this
-mode before pressing `n` or `N` makes it possible to keep the current
-selection. Toggling it on and off during your iterative searching allows
-you to selectively add search terms to your selections.
+Search is also affected.
+By default, `n` and `N` will remove the current selection and select the next instance of the search term.
+Toggling this mode before pressing `n` or `N` makes it possible to keep the current selection.
+Toggling it on and off during your iterative searching allows you to selectively add search terms to your selections.
 
 ## Picker
 
-Keys to use within picker. Remapping currently not supported.
+Keys to use within picker.
+Remapping currently not supported.
 
 | Key                          | Description       |
 | -----                        | -------------     |

@@ -1,19 +1,17 @@
 # Languages
 
-Language-specific settings and settings for language servers are configured
-in `languages.toml` files.
+Language-specific settings and settings for language servers are configured in `languages.toml` files.
 
 ## `languages.toml` files
 
 There are three possible locations for a `languages.toml` file:
 
-1. In the Helix source code, this lives in the
-   [Helix repository](https://github.com/helix-editor/helix/blob/master/languages.toml).
+1. In the Helix source code, this lives in the [Helix repository](https://github.com/helix-editor/helix/blob/master/languages.toml).
    It provides the default configurations for languages and language servers.
 
-2. In your [configuration directory](./configuration.md). This overrides values
-   from the built-in language configuration. For example to disable
-   auto-LSP-formatting in Rust:
+2. In your [configuration directory](./configuration.md).
+   This overrides values from the built-in language configuration.
+   For example to disable auto-LSP-formatting in Rust:
 
 ```toml
 # in <config_dir>/helix/languages.toml
@@ -23,15 +21,13 @@ name = "rust"
 auto-format = false
 ```
 
-3. In a `.helix` folder in your project. Language configuration may also be
-   overridden local to a project by creating a `languages.toml` file in a
-   `.helix` folder. Its settings will be merged with the language configuration
-   in the configuration directory and the built-in configuration.
+3. In a `.helix` folder in your project.
+   Language configuration may also be overridden local to a project by creating a `languages.toml` file in a `.helix` folder.
+   Its settings will be merged with the language configuration in the configuration directory and the built-in configuration.
 
 ## Language configuration
 
-Each language is configured by adding a `[[language]]` section to a
-`languages.toml` file. For example:
+Each language is configured by adding a `[[language]]` section to a `languages.toml` file. For example:
 
 ```toml
 [[language]]
@@ -67,29 +63,22 @@ These configuration keys are available:
 
 ### File-type detection and the `file-types` key
 
-Helix determines which language configuration to use based on the `file-types` key
-from the above section. `file-types` is a list of strings or tables, for
-example:
+Helix determines which language configuration to use based on the `file-types` key from the above section.
+`file-types` is a list of strings or tables, for example:
 
 ```toml
 file-types = ["Makefile", "toml", { suffix = ".git/config" }]
 ```
 
-When determining a language configuration to use, Helix searches the file-types
-with the following priorities:
+When determining a language configuration to use, Helix searches the file-types with the following priorities:
 
-1. Exact match: if the filename of a file is an exact match of a string in a
-   `file-types` list, that language wins. In the example above, `"Makefile"`
-   will match against `Makefile` files.
-2. Extension: if there are no exact matches, any `file-types` string that
-   matches the file extension of a given file wins. In the example above, the
-   `"toml"` matches files like `Cargo.toml` or `languages.toml`.
-3. Suffix: if there are still no matches, any values in `suffix` tables
-   are checked against the full path of the given file. In the example above,
-   the `{ suffix = ".git/config" }` would match against any `config` files
-   in `.git` directories. Note: `/` is used as the directory separator but is
-   replaced at runtime with the appropriate path separator for the operating
-   system, so this rule would match against `.git\config` files on Windows.
+1. Exact match: if the filename of a file is an exact match of a string in a `file-types` list, that language wins.
+   In the example above, `"Makefile"` will match against `Makefile` files.
+2. Extension: if there are no exact matches, any `file-types` string that matches the file extension of a given file wins.
+   In the example above, the `"toml"` matches files like `Cargo.toml` or `languages.toml`.
+3. Suffix: if there are still no matches, any values in `suffix` tables are checked against the full path of the given file.
+   In the example above, the `{ suffix = ".git/config" }` would match against any `config` files in `.git` directories.
+   Note: `/` is used as the directory separator but is replaced at runtime with the appropriate path separator for the operating system, so this rule would match against `.git\config` files on Windows.
 
 ### Language Server configuration
 
@@ -103,9 +92,8 @@ The `language-server` field takes the following keys:
 | `language-id` | The language name to pass to the language server. Some language servers support multiple languages and use this field to determine which one is being served in a buffer |
 | `environment` | Any environment variables that will be used when starting the language server `{ "KEY1" = "Value1", "KEY2" = "Value2" }` |
 
-The top-level `config` field is used to configure the LSP initialization options. A `format`
-sub-table within `config` can be used to pass extra formatting options to
-[Document Formatting Requests](https://github.com/microsoft/language-server-protocol/blob/gh-pages/_specifications/specification-3-16.md#document-formatting-request--leftwards_arrow_with_hook).
+The top-level `config` field is used to configure the LSP initialization options.
+A `format` sub-table within `config` can be used to pass extra formatting options to [Document Formatting Requests](https://github.com/microsoft/language-server-protocol/blob/gh-pages/_specifications/specification-3-16.md#document-formatting-request--leftwards_arrow_with_hook).
 For example with typescript:
 
 ```toml
@@ -118,8 +106,7 @@ config = { format = { "semicolons" = "insert", "insertSpaceBeforeFunctionParenth
 
 ## Tree-sitter grammar configuration
 
-The source for a language's tree-sitter grammar is specified in a `[[grammar]]`
-section in `languages.toml`. For example:
+The source for a language's tree-sitter grammar is specified in a `[[grammar]]` section in `languages.toml`. For example:
 
 ```toml
 [[grammar]]
@@ -134,8 +121,7 @@ Grammar configuration takes these keys:
 | `name`   | The name of the tree-sitter grammar                                      |
 | `source` | The method of fetching the grammar - a table with a schema defined below |
 
-Where `source` is a table with either these keys when using a grammar from a
-git repository:
+Where `source` is a table with either these keys when using a grammar from a git repository:
 
 | Key    | Description                                               |
 | ---    | -----------                                               |
@@ -145,8 +131,7 @@ git repository:
 
 ### Choosing grammars
 
-You may use a top-level `use-grammars` key to control which grammars are
-fetched and built when using `hx --grammar fetch` and `hx --grammar build`.
+You may use a top-level `use-grammars` key to control which grammars are fetched and built when using `hx --grammar fetch` and `hx --grammar build`.
 
 ```toml
 # Note: this key must come **before** the [[language]] and [[grammar]] sections

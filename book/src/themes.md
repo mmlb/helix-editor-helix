@@ -4,7 +4,8 @@ To use a theme add `theme = "<name>"` to the top of your [`config.toml`](./confi
 
 ## Creating a theme
 
-Create a file with the name of your theme as the file name (i.e `mytheme.toml`) and place it in your `themes` directory (i.e `~/.config/helix/themes` or `%AppData%\helix\themes` on Windows). The directory might have to be created beforehand.
+Create a file with the name of your theme as the file name (i.e `mytheme.toml`) and place it in your `themes` directory (i.e `~/.config/helix/themes` or `%AppData%\helix\themes` on Windows).
+The directory might have to be created beforehand.
 
 > 💡 The names "default" and "base16_default" are reserved for built-in themes
 > and cannot be overridden by user-defined themes.
@@ -17,7 +18,8 @@ Each line in the theme file is specified as below:
 key = { fg = "#ffffff", bg = "#000000", underline = { color = "#ff0000", style = "curl"}, modifiers = ["bold", "italic"] }
 ```
 
-Where `key` represents what you want to style, `fg` specifies the foreground color, `bg` the background color, `underline` the underline `style`/`color`, and `modifiers` is a list of style modifiers. `bg`, `underline` and `modifiers` can be omitted to defer to the defaults.
+Where `key` represents what you want to style, `fg` specifies the foreground color, `bg` the background color, `underline` the underline `style`/`color`, and `modifiers` is a list of style modifiers.
+`bg`, `underline` and `modifiers` can be omitted to defer to the defaults.
 
 To specify only the foreground color:
 
@@ -31,10 +33,7 @@ If the key contains a dot `'.'`, it must be quoted to prevent it being parsed as
 "key.key" = "#ffffff"
 ```
 
-For inspiration, you can find the default `theme.toml`
-[here](https://github.com/helix-editor/helix/blob/master/theme.toml) and
-user-submitted themes
-[here](https://github.com/helix-editor/helix/blob/master/runtime/themes).
+For inspiration, you can find the default `theme.toml` [here](https://github.com/helix-editor/helix/blob/master/theme.toml) and user-submitted themes [here](https://github.com/helix-editor/helix/blob/master/runtime/themes).
 
 ### Using the linter
 
@@ -48,9 +47,8 @@ cargo xtask themelint onedark # replace onedark with <name>
 
 ### Color palettes
 
-It's recommended to define a palette of named colors, and refer to them in the
-configuration values in your theme. To do this, add a table called
-`palette` to your theme file:
+It's recommended to define a palette of named colors, and refer to them in the configuration values in your theme.
+To do this, add a table called `palette` to your theme file:
 
 ```toml
 "ui.background" = "white"
@@ -61,12 +59,10 @@ white = "#ffffff"
 black = "#000000"
 ```
 
-Keep in mind that the `[palette]` table includes all keys after its header,
-so it should be defined after the normal theme options.
+Keep in mind that the `[palette]` table includes all keys after its header, so it should be defined after the normal theme options.
 
-The default palette uses the terminal's default 16 colors, and the colors names
-are listed below. The `[palette]` section in the config file takes precedence
-over it and is merged into the default palette.
+The default palette uses the terminal's default 16 colors, and the colors names are listed below.
+The `[palette]` section in the config file takes precedence over it and is merged into the default palette.
 
 | Color Name      |
 | ---             |
@@ -89,8 +85,7 @@ over it and is merged into the default palette.
 
 ### Modifiers
 
-The following values may be used as modifier, provided they are supported by
-your terminal emulator.
+The following values may be used as modifier, provided they are supported by your terminal emulator.
 
 | Modifier             |
 | ---                  |
@@ -109,8 +104,7 @@ your terminal emulator.
 
 ### Underline style
 
-One of the following values may be used as a value for `underline.style`, providing it is
-supported by your terminal emulator.
+One of the following values may be used as a value for `underline.style`, providing it is supported by your terminal emulator.
 
 | Modifier       |
 | ---            |
@@ -144,11 +138,11 @@ The following is a list of scopes available to use for styling:
 
 These keys match [tree-sitter scopes](https://tree-sitter.github.io/tree-sitter/syntax-highlighting#theme).
 
-When determining styling for a highlight, the longest matching theme key will be used. For example, if the highlight is `function.builtin.static`, the key `function.builtin` will be used instead of `function`.
+When determining styling for a highlight, the longest matching theme key will be used.
+For example, if the highlight is `function.builtin.static`, the key `function.builtin` will be used instead of `function`.
 
-We use a similar set of scopes as
-[Sublime Text](https://www.sublimetext.com/docs/scope_naming.html). See also
-[TextMate](https://macromates.com/manual/en/language_grammars) scopes.
+We use a similar set of scopes as [Sublime Text](https://www.sublimetext.com/docs/scope_naming.html).
+See also [TextMate](https://macromates.com/manual/en/language_grammars) scopes.
 
 - `attribute` - Class attributes, HTML tag attributes
 

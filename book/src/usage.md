@@ -10,24 +10,20 @@
 - [Moving the selection with syntax-aware motions](#moving-the-selection-with-syntax-aware-motions)
 <!--toc:end-->
 
-For a full interactive introduction to Helix, refer to the
-[tutor](https://github.com/helix-editor/helix/blob/master/runtime/tutor) which
-can be accessed via the command `hx --tutor` or `:tutor`.
+For a full interactive introduction to Helix, refer to the [tutor](https://github.com/helix-editor/helix/blob/master/runtime/tutor) which can be accessed via the command `hx --tutor` or `:tutor`.
 
 > 💡 Currently, not all functionality is fully documented, please refer to the
 > [key mappings](./keymap.md) list.
 
 ## Registers
 
-In Helix, registers are storage locations for text and other data, such as the
-result of a search. Registers can be used to cut, copy, and paste text, similar
-to the clipboard in other text editors. Usage is similar to Vim, with `"` being
-used to select a register.
+In Helix, registers are storage locations for text and other data, such as the result of a search.
+Registers can be used to cut, copy, and paste text, similar to the clipboard in other text editors.
+Usage is similar to Vim, with `"` being used to select a register.
 
 ### User-defined registers
 
-Helix allows you to create your own named registers for storing text, for
-example:
+Helix allows you to create your own named registers for storing text, for example:
 
 - `"ay` - Yank the current selection to register `a`.
 - `"op` - Paste the text in register `o` after the selection.
@@ -46,8 +42,9 @@ If a register is selected before invoking a change or delete command, the select
 | `"`                | Last yanked text      |
 | `_`                | Black hole            |
 
-The system clipboard is not directly supported by a special register. Instead, special commands and keybindings are provided. Refer to the
-[key map](keymap.md#space-mode) for more details.
+The system clipboard is not directly supported by a special register.
+Instead, special commands and keybindings are provided.
+Refer to the [key map](keymap.md#space-mode) for more details.
 
 The black hole register is a no-op register, meaning that no data will be read or written to it.
 
@@ -66,7 +63,8 @@ The keymappings have been inspired from [vim-sandwich](https://github.com/machak
 
 You can use counts to act on outer pairs.
 
-Surround can also act on multiple selections. For example, to change every occurrence of `(use)` to `[use]`:
+Surround can also act on multiple selections.
+For example, to change every occurrence of `(use)` to `[use]`:
 
 1. `%` to select the whole file
 2. `s` to split the selections on a search term
@@ -77,10 +75,8 @@ Multiple characters are currently not supported, but planned for future release.
 
 ## Selecting and manipulating text with textobjects
 
-In Helix, textobjects are a way to select, manipulate and operate on a piece of
-text in a structured way. They allow you to refer to blocks of text based on
-their structure or purpose, such as a word, sentence, paragraph, or even a
-function or block of code.
+In Helix, textobjects are a way to select, manipulate and operate on a piece of text in a structured way.
+They allow you to refer to blocks of text based on their structure or purpose, such as a word, sentence, paragraph, or even a function or block of code.
 
 ![Textobject demo](https://user-images.githubusercontent.com/23398472/124231131-81a4bb00-db2d-11eb-9d10-8e577ca7b177.gif)
 ![Textobject tree-sitter demo](https://user-images.githubusercontent.com/23398472/132537398-2a2e0a54-582b-44ab-a77f-eb818942203d.gif)
@@ -109,24 +105,20 @@ Contributions are welcome!
 
 ## Navigating using tree-sitter textobjects
 
-Navigating between functions, classes, parameters, and other elements is
-possible using tree-sitter and textobject queries. For
-example to move to the next function use `]f`, to move to previous
-class use `[c`, and so on.
+Navigating between functions, classes, parameters, and other elements is possible using tree-sitter and textobject queries.
+For example to move to the next function use `]f`, to move to previous class use `[c`, and so on.
 
 ![Tree-sitter-nav-demo][tree-sitter-nav-demo]
 
-For the full reference see the [unimpaired][unimpaired-keybinds] section of the key bind
-documentation.
+For the full reference see the [unimpaired][unimpaired-keybinds] section of the key bind documentation.
 
 > 💡 This feature relies on tree-sitter textobjects
 > and requires the corresponding query file to work properly.
 
 ## Moving the selection with syntax-aware motions
 
-`Alt-p`, `Alt-o`, `Alt-i`, and `Alt-n` (or `Alt` and arrow keys) allow you to move the 
-selection according to its location in the syntax tree. For example, many languages have the
-following syntax for function calls:
+`Alt-p`, `Alt-o`, `Alt-i`, and `Alt-n` (or `Alt` and arrow keys) allow you to move the selection according to its location in the syntax tree.
+For example, many languages have the following syntax for function calls:
 
 ```js
 func(arg1, arg2, arg3);
@@ -144,8 +136,8 @@ A function call might be parsed by tree-sitter into a tree like the following.
       (identifier)))     ; arg3
 ```
 
-Use `:tree-sitter-subtree` to view the syntax tree of the primary selection. In
-a more intuitive tree format:
+Use `:tree-sitter-subtree` to view the syntax tree of the primary selection.
+In a more intuitive tree format:
 
 ```
             ┌────┐
@@ -163,8 +155,7 @@ a more intuitive tree format:
    └──────────┘  └──────────┘  └──────────┘
 ```
 
-If you have a selection that wraps `arg1` (see the tree above), and you use
-`Alt-n`, it will select the next sibling in the syntax tree: `arg2`.
+If you have a selection that wraps `arg1` (see the tree above), and you use `Alt-n`, it will select the next sibling in the syntax tree: `arg2`.
 
 ```js
 // before
@@ -173,19 +164,16 @@ func([arg1], arg2, arg3)
 func(arg1, [arg2], arg3);
 ```
 
-Similarly, `Alt-o` will expand the selection to the parent node, in this case, the
-arguments node.
+Similarly, `Alt-o` will expand the selection to the parent node, in this case, the arguments node.
 
 ```js
 func[(arg1, arg2, arg3)];
 ```
 
-There is also some nuanced behavior that prevents you from getting stuck on a
-node with no sibling. When using `Alt-p` with a selection on `arg1`, the previous
-child node will be selected. In the event that `arg1` does not have a previous
-sibling, the selection will move up the syntax tree and select the previous
-element. As a result, using `Alt-p` with a selection on `arg1` will move the
-selection to the "func" `identifier`.
+There is also some nuanced behavior that prevents you from getting stuck on a node with no sibling.
+When using `Alt-p` with a selection on `arg1`, the previous child node will be selected.
+In the event that `arg1` does not have a previous sibling, the selection will move up the syntax tree and select the previous element.
+As a result, using `Alt-p` with a selection on `arg1` will move the selection to the "func" `identifier`.
 
 [lang-support]: ./lang-support.md
 [unimpaired-keybinds]: ./keymap.md#unimpaired

@@ -25,10 +25,8 @@ select = "underline"
 hidden = false
 ```
 
-You can use a custom configuration file by specifying it with the `-c` or
-`--config` command line argument, for example `hx -c path/to/custom-config.toml`.
-Additionally, you can reload the configuration file by sending the USR1
-signal to the Helix process on Unix operating systems, such as by using the command `pkill -USR1 hx`.
+You can use a custom configuration file by specifying it with the `-c` or `--config` command line argument, for example `hx -c path/to/custom-config.toml`.
+Additionally, you can reload the configuration file by sending the USR1 signal to the Helix process on Unix operating systems, such as by using the command `pkill -USR1 hx`.
 
 ## Editor
 
@@ -142,8 +140,8 @@ Valid values for these options are `block`, `bar`, `underline`, or `hidden`.
 
 ### `[editor.file-picker]` Section
 
-Set options for file picker and global search. Ignoring a file means it is
-not visible in the Helix file picker and global search.
+Set options for file picker and global search.
+Ignoring a file means it is not visible in the Helix file picker and global search.
 
 All git related options are only enabled in a git repository.
 
@@ -161,8 +159,8 @@ All git related options are only enabled in a git repository.
 
 ### `[editor.auto-pairs]` Section
 
-Enables automatic insertion of pairs to parentheses, brackets, etc. Can be a
-simple boolean value, or a specific mapping of pairs of single characters.
+Enables automatic insertion of pairs to parentheses, brackets, etc.
+Can be a simple boolean value, or a specific mapping of pairs of single characters.
 
 To disable auto-pairs altogether, set `auto-pairs` to `false`:
 
@@ -184,9 +182,8 @@ setting `auto-pairs` to a TOML table:
 '<' = '>'
 ```
 
-Additionally, this setting can be used in a language config. Unless
-the editor setting is `false`, this will override the editor config in
-documents with this language.
+Additionally, this setting can be used in a language config.
+Unless the editor setting is `false`, this will override the editor config in documents with this language.
 
 Example `languages.toml` that adds <> and removes ''
 
@@ -214,7 +211,8 @@ Search specific options.
 
 ### `[editor.whitespace]` Section
 
-Options for rendering whitespace with visible characters. Use `:set whitespace.render all` to temporarily enable visible whitespace.
+Options for rendering whitespace with visible characters.
+Use `:set whitespace.render all` to temporarily enable visible whitespace.
 
 | Key | Description | Default |
 |-----|-------------|---------|
@@ -261,17 +259,15 @@ skip-levels = 1
 
 ### `[editor.gutters]` Section
 
-For simplicity, `editor.gutters` accepts an array of gutter types, which will
-use default settings for all gutter components.
+For simplicity, `editor.gutters` accepts an array of gutter types, which will use default settings for all gutter components.
 
 ```toml
 [editor]
 gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
 ```
 
-To customize the behavior of gutters, the `[editor.gutters]` section must
-be used. This section contains top level settings, as well as settings for
-specific gutter components as subsections.
+To customize the behavior of gutters, the `[editor.gutters]` section must be used.
+This section contains top level settings, as well as settings for specific gutter components as subsections.
 
 | Key      | Description                    | Default                                                       |
 | ---      | ---                            | ---                                                           |

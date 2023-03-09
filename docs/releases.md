@@ -1,8 +1,8 @@
 ## Checklist
 
 Helix releases are versioned in the Calendar Versioning scheme:
-`YY.0M(.MICRO)`, for example `22.05` for May of 2022. In these instructions
-we'll use `<tag>` as a placeholder for the tag being published.
+`YY.0M(.MICRO)`, for example `22.05` for May of 2022.
+In these instructions we'll use `<tag>` as a placeholder for the tag being published.
 
 * Merge the changelog PR
 * Add new `<release>` entry in `contrib/Helix.appdata.xml` with release information according to the [AppStream spec](https://www.freedesktop.org/software/appstream/docs/sect-Metadata-Releases.html)
@@ -28,33 +28,26 @@ we'll use `<tag>` as a placeholder for the tag being published.
 
 ## Changelog Curation
 
-The changelog is currently created manually by reading through commits in the
-log since the last release. GitHub's compare view is a nice way to approach
-this. For example when creating the 22.07 release notes, this compare link
-may be used
+The changelog is currently created manually by reading through commits in the log since the last release.
+GitHub's compare view is a nice way to approach this.
+For example when creating the 22.07 release notes, this compare link may be used.
 
 ```
 https://github.com/helix-editor/helix/compare/22.05...master
 ```
 
-Either side of the triple-dot may be replaced with an exact revision, so if
-you wish to incrementally compile the changelog, you can tackle a weeks worth
-or so, record the revision where you stopped, and use that as a starting point
-next week:
+Either side of the triple-dot may be replaced with an exact revision, so if you wish to incrementally compile the changelog, you can tackle a weeks worth or so, record the revision where you stopped, and use that as a starting point next week:
 
 ```
 https://github.com/helix-editor/helix/compare/7706a4a0d8b67b943c31d0c5f7b00d357b5d838d...master
 ```
 
-A work-in-progress commit for a changelog might look like
-[this example](https://github.com/helix-editor/helix/commit/831adfd4c709ca16b248799bfef19698d5175e55).
+A work-in-progress commit for a changelog might look like [this example](https://github.com/helix-editor/helix/commit/831adfd4c709ca16b248799bfef19698d5175e55).
 
-Not every PR or commit needs a blurb in the changelog. Each release section
-tends to have a blurb that links to a GitHub comparison between release
-versions for convenience:
+Not every PR or commit needs a blurb in the changelog.
+Each release section tends to have a blurb that links to a GitHub comparison between release versions for convenience:
 
 > As usual, the following is a summary of each of the changes since the last
 > release. For the full log, check out the git log.
 
-Typically, small changes like dependencies or documentation updates, refactors,
-or meta changes like GitHub Actions work are left out.
+Typically, small changes like dependencies or documentation updates, refactors, or meta changes like GitHub Actions work are left out.

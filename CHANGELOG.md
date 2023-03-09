@@ -1,6 +1,7 @@
 # 22.12 (2022-12-06)
 
-This is a great big release filled with changes from a 99 contributors. A big _thank you_ to you all!
+This is a great big release filled with changes from a 99 contributors.
+A big _thank you_ to you all!
 
 As usual, the following is a summary of each of the changes since the last release.
 For the full log, check out the [git log](https://github.com/helix-editor/helix/compare/22.08.1..22.12).

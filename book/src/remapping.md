@@ -1,12 +1,9 @@
 # Key remapping
 
-Helix currently supports one-way key remapping through a simple TOML configuration
-file. (More powerful solutions such as rebinding via commands will be
-available in the future).
+Helix currently supports one-way key remapping through a simple TOML configuration file.
+(More powerful solutions such as rebinding via commands will be available in the future).
 
-To remap keys, create a `config.toml` file in your `helix` configuration
-directory (default `~/.config/helix` on Linux systems) with a structure like
-this:
+To remap keys, create a `config.toml` file in your `helix` configuration directory (default `~/.config/helix` on Linux systems) with a structure like this:
 
 ```toml
 # At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
@@ -26,8 +23,8 @@ j = { k = "normal_mode" } # Maps `jk` to exit insert mode
 
 ## Minor modes
 
-Minor modes are accessed by pressing a key (usually from normal mode), giving access to dedicated bindings. Bindings
-can be modified or added by nesting definitions.
+Minor modes are accessed by pressing a key (usually from normal mode), giving access to dedicated bindings.
+Bindings can be modified or added by nesting definitions.
 
 ```toml
 [keys.insert.j]
@@ -50,8 +47,7 @@ t = ":run-shell-command cargo test"
 
 ## Special keys and modifiers
 
-Ctrl, Shift and Alt modifiers are encoded respectively with the prefixes
-`C-`, `S-` and `A-`. Special keys are encoded as follows:
+Ctrl, Shift and Alt modifiers are encoded respectively with the prefixes `C-`, `S-` and `A-`. Special keys are encoded as follows:
 
 | Key name     | Representation |
 | ---          | ---            |
@@ -75,5 +71,4 @@ Ctrl, Shift and Alt modifiers are encoded respectively with the prefixes
 
 Keys can be disabled by binding them to the `no_op` command.
 
-A list of commands is available in the [Keymap](https://docs.helix-editor.com/keymap.html) documentation
- and in the source code at [`helix-term/src/commands.rs`](https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs) at the invocation of `static_commands!` macro and the `TypableCommandList`.
+A list of commands is available in the [Keymap](https://docs.helix-editor.com/keymap.html) documentation and in the source code at [`helix-term/src/commands.rs`](https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs) at the invocation of `static_commands!` macro and the `TypableCommandList`.
