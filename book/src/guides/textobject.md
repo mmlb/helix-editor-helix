@@ -12,7 +12,7 @@ Note that to test the query files locally you should put them under your local r
 The following [captures][tree-sitter-captures] are recognized:
 
 | Capture Name       |
-| ---                |
+| ------------------ |
 | `function.inside`  |
 | `function.around`  |
 | `class.inside`     |

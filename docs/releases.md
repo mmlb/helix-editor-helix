@@ -4,25 +4,25 @@ Helix releases are versioned in the Calendar Versioning scheme:
 `YY.0M(.MICRO)`, for example `22.05` for May of 2022.
 In these instructions we'll use `<tag>` as a placeholder for the tag being published.
 
-* Merge the changelog PR
-* Add new `<release>` entry in `contrib/Helix.appdata.xml` with release information according to the [AppStream spec](https://www.freedesktop.org/software/appstream/docs/sect-Metadata-Releases.html)
-* Tag and push
-    * `git tag -s -m "<tag>" -a <tag> && git push`
-    * Make sure to switch to master and pull first
-* Edit the `VERSION` file and change the date to the next planned release
-    * Releases are planned to happen every two months, so `22.05` would change to `22.07`
-* Wait for the Release CI to finish
-    * It will automatically turn the git tag into a GitHub release when it uploads artifacts
-* Edit the new release
-    * Use `<tag>` as the title
-    * Link to the changelog and release notes
-* Merge the release notes PR
-* Download the macos and linux binaries and update the `sha256`s in the [homebrew formula]
-    * Use `sha256sum` on the downloaded `.tar.xz` files to determine the hash
-* Link to the release notes in this-week-in-rust
-    * [Example PR](https://github.com/rust-lang/this-week-in-rust/pull/3300)
-* Post to reddit
-    * [Example post](https://www.reddit.com/r/rust/comments/uzp5ze/helix_editor_2205_released/)
+- Merge the changelog PR
+- Add new `<release>` entry in `contrib/Helix.appdata.xml` with release information according to the [AppStream spec](https://www.freedesktop.org/software/appstream/docs/sect-Metadata-Releases.html)
+- Tag and push
+  - `git tag -s -m "<tag>" -a <tag> && git push`
+  - Make sure to switch to master and pull first
+- Edit the `VERSION` file and change the date to the next planned release
+  - Releases are planned to happen every two months, so `22.05` would change to `22.07`
+- Wait for the Release CI to finish
+  - It will automatically turn the git tag into a GitHub release when it uploads artifacts
+- Edit the new release
+  - Use `<tag>` as the title
+  - Link to the changelog and release notes
+- Merge the release notes PR
+- Download the macos and linux binaries and update the `sha256`s in the [homebrew formula]
+  - Use `sha256sum` on the downloaded `.tar.xz` files to determine the hash
+- Link to the release notes in this-week-in-rust
+  - [Example PR](https://github.com/rust-lang/this-week-in-rust/pull/3300)
+- Post to reddit
+  - [Example post](https://www.reddit.com/r/rust/comments/uzp5ze/helix_editor_2205_released/)
 
 [homebrew formula]: https://github.com/Homebrew/homebrew-core/blob/master/Formula/helix.rb
 

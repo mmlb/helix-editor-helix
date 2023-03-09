@@ -985,6 +985,7 @@ Usability improvements and fixes:
 - Implement key ordering for info box ([#952](https://github.com/helix-editor/helix/pull/952))
 
 LSP:
+
 - Implement MarkedString rendering ([`e128a8702`](https://github.com/helix-editor/helix/commit/e128a8702))
 - Don't panic if init fails ([`d31bef7`](https://github.com/helix-editor/helix/commit/d31bef7))
 - Configurable diagnostic severity ([#1325](https://github.com/helix-editor/helix/pull/1325))
@@ -1096,7 +1097,7 @@ Fixes:
 - Pin popups with no positioning to the initial position ([`12ea3888`](https://github.com/helix-editor/helix/commit/12ea3888))
 - xsel copy should not freeze the editor ([`6dd7dc4`](https://github.com/helix-editor/helix/commit/6dd7dc4))
 - `*` now only sets the search register and doesn't jump to the next occurrence ([`3426285`](https://github.com/helix-editor/helix/commit/3426285))
-- Goto line start/end commands extend when in select mode ([#739](https://github.com/helix-editor/helix/pull/739)) 
+- Goto line start/end commands extend when in select mode ([#739](https://github.com/helix-editor/helix/pull/739))
 - Fix documentation popups sometimes not getting fully highlighted ([`066367c`](https://github.com/helix-editor/helix/commit/066367c))
 - Refactor apply_workspace_edit to remove assert ([`b02d872`](https://github.com/helix-editor/helix/commit/b02d872))
 - Wrap around the top of the picker menu when scrolling ([`c7d6e44`](https://github.com/helix-editor/helix/commit/c7d6e44))
@@ -1132,7 +1133,7 @@ selections in the future as well as resolves many bugs and edge cases.
 - Selection contents rotation via `Alt-(` and `Alt-)` ([`02cba2a`](https://github.com/helix-editor/helix/commit/02cba2a7f403f48eccb18100fb751f7b42373dba))
 - Completion behavior improvements ([`f917b5a4`](https://github.com/helix-editor/helix/commit/f917b5a441ff3ae582358b6939ffbf889f4aa530), [`627b899`](https://github.com/helix-editor/helix/commit/627b89931576f7af86166ae8d5cbc55537877473))
 - Fixed a language server crash ([`385a6b5a`](https://github.com/helix-editor/helix/commit/385a6b5a1adddfc26e917982641530e1a7c7aa81))
-- Case change commands (`` ` ``, `~`, ``<a-`>``) ([#441](https://github.com/helix-editor/helix/pull/441))
+- Case change commands (`` ` ``, `~`, `` <a-`> ``) ([#441](https://github.com/helix-editor/helix/pull/441))
 - File pickers (including goto) now provide a preview! ([#534](https://github.com/helix-editor/helix/pull/534))
 - Injection query support. Rust macro calls and embedded languages are now properly highlighted ([#430](https://github.com/helix-editor/helix/pull/430))
 - Formatting is now asynchronous, and the async job infrastructure has been improved ([#285](https://github.com/helix-editor/helix/pull/285))
@@ -1153,7 +1154,7 @@ selections in the future as well as resolves many bugs and edge cases.
 
 A big shout out to all the contributors! We had 24 contributors in this release.
 
-Another big release. 
+Another big release.
 
 Highlights:
 
@@ -1226,6 +1227,7 @@ to distinguish it in bug reports..
 # 0.0.10
 
 Keymaps:
+
 - Add mappings to jump to diagnostics
 - Add gt/gm/gb mappings to jump to top/middle/bottom of screen
 - ^ and $ are now gh, gl

@@ -50,7 +50,7 @@ t = ":run-shell-command cargo test"
 Ctrl, Shift and Alt modifiers are encoded respectively with the prefixes `C-`, `S-` and `A-`. Special keys are encoded as follows:
 
 | Key name     | Representation |
-| ---          | ---            |
+| ------------ | -------------- |
 | Backspace    | `"backspace"`  |
 | Space        | `"space"`      |
 | Return/Enter | `"ret"`        |

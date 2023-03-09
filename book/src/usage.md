@@ -1,6 +1,7 @@
 # Using Helix
 
 <!--toc:start-->
+
 - [Registers](#registers)
   - [User-defined registers](#user-defined-registers)
   - [Special registers](#special-registers)
@@ -36,7 +37,7 @@ If a register is selected before invoking a change or delete command, the select
 ### Special registers
 
 | Register character | Contains              |
-| ---                | ---                   |
+| ------------------ | --------------------- |
 | `/`                | Last search           |
 | `:`                | Last executed command |
 | `"`                | Last yanked text      |
@@ -84,24 +85,24 @@ They allow you to refer to blocks of text based on their structure or purpose, s
 - `ma` - Select around the object (`va` in Vim, `<alt-a>` in Kakoune)
 - `mi` - Select inside the object (`vi` in Vim, `<alt-i>` in Kakoune)
 
-| Key after `mi` or `ma` | Textobject selected      |
-| ---                    | ---                      |
-| `w`                    | Word                     |
-| `W`                    | WORD                     |
-| `p`                    | Paragraph                |
-| `(`, `[`, `'`, etc.    | Specified surround pairs |
-| `m`                    | The closest surround pair    |
-| `f`                    | Function                 |
-| `c`                    | Class                    |
-| `a`                    | Argument/parameter       |
-| `o`                    | Comment                  |
-| `t`                    | Test                     |
-| `g`                    | Change                   |
+| Key after `mi` or `ma` | Textobject selected       |
+| ---------------------- | ------------------------- |
+| `w`                    | Word                      |
+| `W`                    | WORD                      |
+| `p`                    | Paragraph                 |
+| `(`, `[`, `'`, etc.    | Specified surround pairs  |
+| `m`                    | The closest surround pair |
+| `f`                    | Function                  |
+| `c`                    | Class                     |
+| `a`                    | Argument/parameter        |
+| `o`                    | Comment                   |
+| `t`                    | Test                      |
+| `g`                    | Change                    |
 
 > 💡 `f`, `c`, etc. need a tree-sitter grammar active for the current
-document and a special tree-sitter query file to work properly. [Only
-some grammars][lang-support] currently have the query file implemented.
-Contributions are welcome!
+> document and a special tree-sitter query file to work properly. [Only
+> some grammars][lang-support] currently have the query file implemented.
+> Contributions are welcome!
 
 ## Navigating using tree-sitter textobjects
 
@@ -159,7 +160,7 @@ If you have a selection that wraps `arg1` (see the tree above), and you use `Alt
 
 ```js
 // before
-func([arg1], arg2, arg3)
+func([arg1], arg2, arg3);
 // after
 func(arg1, [arg2], arg3);
 ```

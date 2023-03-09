@@ -1,9 +1,9 @@
 ---
 name: Enhancement
 about: Suggest an improvement
-title: ''
+title: ""
 labels: C-enhancement
-assignees: ''
+assignees: ""
 ---
 
 <!--

@@ -1,6 +1,7 @@
 # Installing Helix
 
 <!--toc:start-->
+
 - [Pre-built binaries](#pre-built-binaries)
 - [Linux, macOS, Windows and OpenBSD packaging status](#linux-macos-windows-and-openbsd-packaging-status)
 - [Linux](#linux)
@@ -18,7 +19,7 @@
   - [Configuring Helix's runtime files](#configuring-helixs-runtime-files)
   - [Validating the installation](#validating-the-installation)
   - [Configure the desktop shortcut](#configure-the-desktop-shortcut)
-<!--toc:end-->
+  <!--toc:end-->
 
 To install Helix, follow the instructions specific to your operating system.
 Note that:
@@ -69,6 +70,7 @@ Releases are available in the `community` repository:
 ```sh
 sudo pacman -S helix
 ```
+
 Additionally, a [helix-git](https://aur.archlinux.org/packages/helix-git/) package is available in the AUR, which builds the master branch.
 
 ### NixOS
@@ -79,7 +81,7 @@ Outputs are cached for each push to master using [Cachix](https://www.cachix.org
 The flake is configured to automatically make use of this cache assuming the user accepts the new settings on first use.
 
 If you are using a version of Nix without flakes enabled, [install Cachix CLI](https://docs.cachix.org/installation) and use `cachix use helix` to configure Nix to use cached outputs when possible.
- 
+
 ## macOS
 
 ### Homebrew Core
@@ -172,10 +174,10 @@ setx HELIX_RUNTIME "%userprofile%\source\repos\helix\runtime"
 
 Or, create a symlink in `%appdata%\helix\` that links to the source code directory:
 
-| Method     | Command                                                                                |
-| ---------- | -------------------------------------------------------------------------------------- |
-| PowerShell | `New-Item -ItemType Junction -Target "runtime" -Path "$Env:AppData\helix\runtime"`     |
-| Cmd        | `cd %appdata%\helix` <br/> `mklink /D runtime "%userprofile%\src\helix\runtime"`       |
+| Method     | Command                                                                            |
+| ---------- | ---------------------------------------------------------------------------------- |
+| PowerShell | `New-Item -ItemType Junction -Target "runtime" -Path "$Env:AppData\helix\runtime"` |
+| Cmd        | `cd %appdata%\helix` <br/> `mklink /D runtime "%userprofile%\src\helix\runtime"`   |
 
 > 💡 On Windows, creating a symbolic link may require running PowerShell or
 > Cmd as an administrator.

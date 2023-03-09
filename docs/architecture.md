@@ -1,6 +1,5 @@
-
 | Crate        | Description                                                      |
-| -----------  | -----------                                                      |
+| ------------ | ---------------------------------------------------------------- |
 | helix-core   | Core editing primitives, functional.                             |
 | helix-lsp    | Language server client                                           |
 | helix-dap    | Debug Adapter Protocol (DAP) client                              |
@@ -8,7 +7,6 @@
 | helix-view   | UI abstractions for use in backends, imperative shell.           |
 | helix-term   | Terminal UI                                                      |
 | helix-tui    | TUI primitives, forked from tui-rs, inspired by Cursive          |
-
 
 This document contains a high-level overview of Helix internals.
 
@@ -73,7 +71,7 @@ On each top level render call, the compositor renders each component in the orde
 This makes multiple components "layer" on top of one another.
 Hence we get a file picker displayed over the editor, etc.
 
-The `Editor` holds the global state: all the open documents, a tree representation of all the view splits, the configuration, and a registry of  language servers.
+The `Editor` holds the global state: all the open documents, a tree representation of all the view splits, the configuration, and a registry of language servers.
 To open or close files, interact with the editor.
 
 ## LSP
@@ -86,10 +84,9 @@ The terminal frontend.
 
 The `main` function sets up a new `Application` that runs the event loop.
 
-`commands.rs` is probably the most interesting file. It contains all commands (actions tied to keybindings). 
+`commands.rs` is probably the most interesting file. It contains all commands (actions tied to keybindings).
 
 `keymap.rs` links commands to key combinations.
-
 
 ## TUI / Term
 

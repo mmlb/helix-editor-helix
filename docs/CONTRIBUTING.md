@@ -7,11 +7,11 @@ Some suggestions to get started:
 - You can look at the [good first issue][good-first-issue] label on the issue tracker.
 - Help with packaging on various distributions needed!
 - To use print debugging to the [Helix log file][log-file], you must:
-  * Print using `log::info!`, `warn!`, or `error!`.
+  - Print using `log::info!`, `warn!`, or `error!`.
     (`log::info!("helix!")`)
-  * Pass the appropriate verbosity level option for the desired log level.
+  - Pass the appropriate verbosity level option for the desired log level.
     (`hx -v <file>` for info, more `v`s for higher verbosity)
-  * Want to display the logs in a separate file instead of using the `:log-open` command in your compiled Helix editor? Start your debug version with `cargo run -- --log foo.log` and in a new terminal use `tail -f foo.log`
+  - Want to display the logs in a separate file instead of using the `:log-open` command in your compiled Helix editor? Start your debug version with `cargo run -- --log foo.log` and in a new terminal use `tail -f foo.log`
 - Instead of running a release version of Helix, while developing you may want to run in debug mode with `cargo run` which is way faster to compile
 - Looking for even faster compile times?
   Give a try to [mold](https://github.com/rui314/mold)
